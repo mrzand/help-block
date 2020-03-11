@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "proxima-nova-regular";
+  src: url("../fonts/proxima-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "proxima-nova-semibold";
+  src: url("../fonts/proxima-semibold.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "proxima-nova-regular", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.help-row {
+  margin: 145px 0;
+}
+
+.help-plates {
+  display: flex;
+  justify-content: center;
+}
+
+.plates-block {
+  position: relative;
+  width: 100%;
+  max-width: 495px;
+  height: 400px;
+  left: 2px;
+}
+
+.image-plate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  max-width: 445px;
+  height: 350px;
+  background: url(../img/image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.gradient-plate {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90%;
+  max-width: 430px;
+  height: 330px;
+  background: linear-gradient(324.88deg, #13547a -28.07%, #6df0d8 132.89%);
+  box-shadow: 0px 6px 14px rgba(38, 44, 61, 0.3);
+  z-index: 1;
+}
+
+.help-plates,
+.help-description {
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.help-plates {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.help-description {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.help-description h3 {
+  font-family: "proxima-nova-semibold";
+  font-size: 40px;
+  line-height: 50px;
+  color: #333333;
+}
+
+.list {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.list li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 14px;
+  font-size: 20px;
+  line-height: 34px;
+  color: #64696f;
+}
+
+.list li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  background-color: #1ea2a1;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 34px;
+  color: #64696f;
+  margin-top: 50px;
+}
+
+/* ANIMATION */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* MEDIA */
+@media (min-width: 768px) {
+  .container.help-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .list li,
+  .description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .help-description h3 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .description {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .image-plate,
+  .gradient-plate {
+    max-width: 100%;
+    height: 90%;
+  }
+
+  .plates-block {
+    max-width: 100%;
+    height: 320px;
+  }
+
+  .help-description {
+    margin-top: 48px;
+  }
+
+  .list li,
+  .description {
+    text-align: justify;
+  }
+}
